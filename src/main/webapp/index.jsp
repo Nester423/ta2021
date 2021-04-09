@@ -12,10 +12,16 @@
         <title>TA start</title>
     </head>
     <body>
-        <h1>My TA labs</h1>
-        <form action="lab1.jsp">
-            <input type="submit" value="Lab1">
-        </form>
-        <a href="lab1.jsp">Lab1</a>
+        <h1>Лабораторні роботи з дисципліни "Теорія алгоритмів"</h1>
+        <p>Олександр Кондратов, ІР-12</p>
+        
+        <div>
+            <form action="lab1.jsp">
+                <input type="submit" value="Lab1">
+            </form>
+        </div>
+        
+        
+        
     </body>
 </html>
