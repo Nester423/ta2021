@@ -5,10 +5,16 @@
  */
 package knu.fit.ist.ta.lab4;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
+import org.springframework.util.StringUtils;
 
 
 /**
@@ -30,6 +36,11 @@ public class StringProcessing {
     
     public String getText() {
         return this.text;
+    }
+    
+    public String getCleanText()
+    {
+        return String.join(" ", getList(text));
     }
 
     public List<String> getList(String text) {
@@ -83,31 +94,65 @@ public class StringProcessing {
         return str;
     }
     
-    public int findAmountOfWordsWithoutV(String s) {
-        String[] str = s.split("\\W+");         
+       public int findAmountOfWordsWithoutV(String s) {
+        String[] str = s.split("\\W+");
+        if (s == "") return 0;
         int k = 0;
         int z;
         
         for(int i=0; i<str.length; i++) {
             if (str[i].contains("v")) k++;
         }
-        
+
         z = str.length - k;
         
         return z;
     }
+      
+     public String findAmountOfWordsWith3UniqueLet(String s){
     
-    public int findWordsWith3DifLet(String s) {
         String[] str = s.split("\\W+");
-        int z = 0;
+        List<String> result = getList(s);
+        int answerLine = 0;
         
-        for(int i=0; i<str.length; i++) {
-           if (str[i].contains("\\w{3}")) z++;         
+        for (int j = 0; j < result.size(); j++){
+            
+            String letters = result.get(j);
+            Set<String> resLetters = new HashSet<>();
+            
+            for (int i = 0; i < letters.length(); i++){
+                
+                resLetters.add("" + letters.charAt(i));
+            }
+            if (resLetters.size() == 3)
+                answerLine++;
         }
-       
-   return z;
-   }
-        
+        return "" + answerLine;
+    }
+     
+     public String find4MostPopular3Sequences(String s)
+    {   
+        String[] str = s.split("\\W+");
+        Map<String, Integer> dictionary = new HashMap<String, Integer>();
+        int currentWordLength;
+        String sequence;
+        for (int i = 0; i < str.length; i++) {
+            currentWordLength = str[i].length();
+            for (int j = 0; j < currentWordLength - 3; j++) {
+                sequence = str[i].substring(j, j + 3);
+                if(dictionary.containsKey(sequence))
+                    dictionary.put(sequence, dictionary.get(sequence) + 1);
+                else
+                   dictionary.put(sequence, 1);
+            }
+        }
+        List<Entry<String, Integer>> list = new ArrayList<>(dictionary.entrySet());
+        list.sort(Entry.comparingByValue());
+        Collections.reverse(list);
+        Object[] sortedArray = list.toArray();
+        return Arrays.toString(Arrays.copyOfRange(sortedArray, 0, 4));
+    }
+    
 }
 
     

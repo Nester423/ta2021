@@ -27,18 +27,25 @@ public class Lab4Task {
        StringMatching sm = new StringMatching();
        List list = sp.getList(sp.text);
        Set set = sp.getSet(sp.text);
-       
+  
        System.out.println(list);
        System.out.println(list.size());
        System.out.println("=====================");
        System.out.println(set);
        System.out.println(set.size());
-       System.out.println("=====================");
+       System.out.println("==========find6MostFrequentWords===========");
        System.out.println(sp.find6MostFrequentWords(sp.text));
-       System.out.println("=====================");
+       System.out.println("============findAmountOfWordsWithoutV=========");
        System.out.println(sp.findAmountOfWordsWithoutV(sp.getText()));
-       System.out.println("=====================");
-       System.out.println(sm.findAmountOfWordsWith3UniqueLet(sp.getText()));
+       
+       System.out.println("=========findAmountOfWordsWith3UniqueLet============");
+       System.out.println(sp.findAmountOfWordsWith3UniqueLet(sp.getText()));
+       
+       System.out.println("===========find4MostPopular3Sequences==========");
+       System.out.println(sp.find4MostPopular3Sequences(sp.getText()));
+    
+       
+      
     }
    
  

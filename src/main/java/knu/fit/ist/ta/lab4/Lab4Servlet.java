@@ -81,11 +81,14 @@ public class Lab4Servlet extends HttpServlet {
         Set set = sp.getSet(sp.text);
         
         request.setAttribute("list", list);
+        request.setAttribute("cleanText", sp.getCleanText());
         request.setAttribute("listSize", list.size());
         request.setAttribute("setSize", set.size());
         request.setAttribute("6MostFrequentWords", sp.find6MostFrequentWords(sp.text));
-        request.setAttribute("AmountOfWordsWithoutV", sp.findAmountOfWordsWithoutV(sp.getText()));
-        request.setAttribute("AmountOfWordsWith3UniqueLet", sm.findAmountOfWordsWith3UniqueLet(sp.getText()));
+        request.setAttribute("AmountOfWordsWithoutV", sp.findAmountOfWordsWithoutV(sp.getText()));     
+        request.setAttribute("AmountOfWordsWith3UniqueLet", sp.findAmountOfWordsWith3UniqueLet(sp.getText()));
+        request.setAttribute("find4MostPopular3Sequences", sp.find4MostPopular3Sequences(sp.getText()));
+        
         request.getRequestDispatcher("lab4.jsp").forward(request, response);
     }
 

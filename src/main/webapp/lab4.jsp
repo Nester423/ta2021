@@ -17,7 +17,7 @@
         <h2>Варіант 6</h2>
 
         <h3>1.Очищення тексту.</h3>      
-        <p><%=request.getAttribute("list")%></p>
+        <p><%=request.getAttribute("cleanText")%></p>
        
         <h3>2.Визначити загальну кількість слів у тексті.</h3>
         <p><%=request.getAttribute("listSize")%></p>
@@ -35,6 +35,7 @@
         <p><%=request.getAttribute("AmountOfWordsWith3UniqueLet")%></p>
         
         <h3>7.Визначити перші 4 трьохлітерні послідовності у словах тексту, що зустрічаються найчастіше.</h3>
+        <p><%=request.getAttribute("find4MostPopular3Sequences")%></p>
         
         <div>
             <form action="index.jsp">
