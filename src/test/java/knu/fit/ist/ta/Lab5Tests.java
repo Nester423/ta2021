@@ -60,7 +60,8 @@ public class Lab5Tests {
         }           
    
     @Test 
-        void test3() {    
+        void test3() {
+         assertEquals((srch.linearSearch("of", sp.getList(text3))).toString(), "[]");
          assertEquals((ft.showList(sortedTestList3)).toString(), "[]");
          assertEquals(ft.jumpSearch(sortedTestList3, "ertu"), 0);
         }
