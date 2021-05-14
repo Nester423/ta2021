@@ -82,6 +82,12 @@ public class StringProcessing {
      
     public ArrayList<Obj> initList(int amount){ 
         ArrayList<Obj> list = new ArrayList<Obj>();
+
+        if (amount < 1) {
+            Obj elem = new Obj();               
+            list.add(elem);
+        }
+        
         for (int i = 0; i < amount; i++) {
             Obj elem = new Obj();               
             list.add(elem);

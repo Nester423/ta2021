@@ -6,7 +6,6 @@
 package knu.fit.ist.ta.lab5;
 
 import java.util.ArrayList;
-import static java.util.Collections.list;
 import java.util.List;
 
 /**
@@ -25,12 +24,14 @@ public class Lab5Task {
     int amount = 5;
     
     List amountOfWord = srch.linearSearch(word, list);    
-    ArrayList a = sp.initList(10);
+    ArrayList a = sp.initList(2);
     
     System.out.println(amountOfWord);
     System.out.println("===========UnsortedList=============");
     System.out.println(sp.showList(a));
     System.out.println("===========SortedList=============");
-    //System.out.println(sp.showList(srt.sortApproach(a))); 
+    System.out.println(sp.showList(srt.sortApproach(a))); 
+    System.out.println("===========JumpSearch=============");
+    System.out.println(srch.jumpSearch(a, "h4gl")); 
     }
 }

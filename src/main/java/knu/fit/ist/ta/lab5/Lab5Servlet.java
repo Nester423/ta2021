@@ -5,12 +5,10 @@
  */
 package knu.fit.ist.ta.lab5;
 
-import knu.fit.ist.ta.lab5.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -83,7 +81,7 @@ public class Lab5Servlet extends HttpServlet {
         
         List list = sp.getList(sp.text);
         String word = request.getParameter("word");
-        int amount = Integer.parseInt(request.getParameter("amount"));
+        int amount = Integer.parseInt(request.getParameter("amount"));     
         List amountOfWord = srch.linearSearch(word, list);
         ArrayList strAndIntList = new ArrayList<>();
         strAndIntList = sp.initList(amount);
@@ -91,7 +89,8 @@ public class Lab5Servlet extends HttpServlet {
         request.setAttribute("cleanText", sp.getCleanText());
         request.setAttribute("amountOfWord", amountOfWord);      
         request.setAttribute("strAndIntList", sp.showList(strAndIntList));
-        //request.setAttribute("sortedList", sp.showList(srt.sortApproach(strAndIntList)));
+        request.setAttribute("sortedList", sp.showList(srt.sortApproach(strAndIntList)));
+        request.setAttribute("jumpSearch", srch.jumpSearch(strAndIntList, "ogghen"));    
         request.setAttribute("word", word);
         request.setAttribute("amount", amount);
         

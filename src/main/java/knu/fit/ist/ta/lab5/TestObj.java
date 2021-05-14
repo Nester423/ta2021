@@ -12,12 +12,16 @@ import java.security.SecureRandom;
  *
  * @author 19sam
  */
-
-class Obj {
+public class TestObj {
     SecureRandom random = new SecureRandom();
     
-    String rdString = new BigInteger(30, random).toString(32);
-    int rdInt = (int) (Math.random()*1000);
+    String rdString = new BigInteger(5, random).toString(32);
+    int rdInt = (int) (Math.random()*10);
+    
+    public TestObj(String s, int i) {
+        this.rdString = s;
+        this.rdInt = i;
+    }
     
     public String getRdString() {
         return rdString;
@@ -26,5 +30,12 @@ class Obj {
     public int getRdInt() {
         return rdInt;
     }
+    
+    public void setRdString(String s) {
+        this.rdString = s;
+    }
+    
+    public void setRdInt(int i) {
+        this.rdInt = i;
+    }
 }
-

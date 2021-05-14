@@ -26,6 +26,9 @@
         <p><%=request.getAttribute("strAndIntList")%></p>
         
         <h3>3.Створити та реалізувати алгорими сортування ( sortApproach1 ) та пошуку  ( jumpSearch ) для згенерованого у п.2 списку.</h3>
-        
+        <h4>Сортування (sortApproach1)</h4>
+        <p><%=request.getAttribute("sortedList")%></p>
+        <h4>Пошук (jumpSearch)</h4>
+        <p><%=request.getAttribute("jumpSearch")%></p>
     </body>
 </html>
